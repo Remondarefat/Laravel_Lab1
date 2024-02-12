@@ -21,9 +21,10 @@ Route::get('/', function () {
 Route::get('users',[userController::class ,'index'])->name('users.index');
 
 // ! Show user-----------
-Route::get('users/show/{user}',[userController::class ,'show'])
-->where('id', '[0-9]+')
-->name('users.show');
+Route::get('users/{user}',[userController::class ,'show'])
+->name('users.show')
+->where('user', '[0-9]+');
+
 
 // ! Add New User---------
 Route::get('users/create',[userController::class ,'create'])->name('users.create');
@@ -31,8 +32,9 @@ Route::post('users',[userController::class ,'store'])->name('users.store');
 
 // ! Update User Data------
 Route::get('users/{user}/edit',[userController::class ,'edit'])
-->where('id', '[0-9]+')
+->where('user', '[0-9]+')
 ->name('users.edit');
+
 Route::put('users/{user}',[userController::class ,'update'])
 ->name('users.update');
 

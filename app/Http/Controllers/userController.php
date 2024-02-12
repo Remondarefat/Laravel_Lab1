@@ -19,7 +19,7 @@ class userController extends Controller
      */
     public function create()
     {
-        return view('users.create.create');
+        return view('users.create');
     }
 
     /**
@@ -35,7 +35,7 @@ class userController extends Controller
      */
     public function show(string $id)
     {
-        return view('users.show.show',['id'=>$id]);
+        return view('users.show',['id'=>$id]);
     }
 
     /**
@@ -43,7 +43,7 @@ class userController extends Controller
      */
     public function edit(string $id)
     {
-        return view('users.edit.edit',['id'=>$id]) ;
+        return view('users.edit',['id'=>$id]) ;
     }
 
     /**
